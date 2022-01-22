@@ -17,19 +17,6 @@ for i in range(n):
     if m[0] == 'I':
         a.append(m)
 
-# c = -1
-# for i in a[:]:
-#     c = c + 1
-#     v = f(i[1],a[:],c)
-#     if i[0] == 'I' and v:
-#         a.remove(i)
-#     elif i[0] == 'D':
-#         if v:
-#             print(v)
-#         a.remove(i)
-        
-# print(a)
-        
 a = sorted(a, key=lambda x: int(x[1]))
 
 
