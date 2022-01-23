@@ -21,7 +21,15 @@
 
 # 둘째 줄부터 N개의 줄에 걸쳐 각 카드에 적힌 숫자가 주어짐 각 숫자는 1이상 10000이하의 자연수
 
- 
+
 # 출력 조건
 
 # 첫째 줄에 게임의 룰에 맞게 선택한 카드에 적힌 숫자를 출력
+
+n,m = map(int,input().split())
+minv = 0
+for i in range(n):
+    c = list(map(int,input().split()))
+    if min(c) > minv:
+        minv = min(c)
+print(minv)
