@@ -1,34 +1,14 @@
-n,m = map(int,input().split())
+n = int(input())
 
-a = []
-for i in range(n):
-    a.append(int(input()))
-a.sort(reverse=True)
-d = [0] * (n)
-print("a는 ",a)
-#d는 나눈 후 나머지들을 저장?
-s = 0
-d[0] = m % a[0]
+d = [0] * 100
 
-#점화식 : Ax = m % Ax-1
-for i in range(1,n):
+# (1,1) (2,3) (3,5) (4,11)
+# 점화식 : a[i] = a[i-1] + a[i-2] * 2
+
+d[1] = 1
+d[2] = 3
+for i in range(3,n+1):
+    d[i] = (d[i-1]+d[i-2] * 2) % 706796
+    # 너무 큰 수는 안나오게 하기 위해서 나머지 식 추가
     
-    if d[n-1] == m or d[n-1] != 0:
-        print(-1)
-        break
-    
-    if d[0] == 0:
-        print("정답: ",m // a[0])
-        break
-    
-    d[i] = d[i-1] % a[i]
-    
-    s = s + (d[i-1] // a[i])
-        
-    if d[i] == 0:
-        print("정답: ",s)
-        break
-    
-    print(i, s, d)
-    
-print(d)
+print(d[n])
