@@ -3,6 +3,7 @@ def findTeam(t,x):
     if t[x] != x:
         t[x] = findTeam(t,t[x])
     return t[x]
+# 부모노드를 찾아서 반환한다. 
 
 def uninTeam(t,a,b):
     a = findTeam(t,a)
@@ -11,6 +12,8 @@ def uninTeam(t,a,b):
         t[b] = a
     else:
         t[a] = b
+# 부모노드를 같은 것으로 바꾼다.
+# 경로는 문제가 되지 않는다.
 
 n,m = map(int,input().split())
 
