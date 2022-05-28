@@ -22,6 +22,5 @@ for v in arr:
         
 arr3.sort()
 
-
 for j in arr3:
     print(j)
