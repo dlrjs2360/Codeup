@@ -7,10 +7,13 @@ for _ in range(m):
     
 start, end = map(int,input().split())
 
-result = 9999
-temp = []
+temp = 0
+distance = [[0] * n for _ in range(n)]
 
 # print(start,end)
+
+for i in arr:
+    temp[i[0]][i[1]] = i[2]
 
 def dfs(arr, start, end) :
     global temp
@@ -20,10 +23,9 @@ def dfs(arr, start, end) :
         if i[0] == start:
             print("start="+str(start))
             print("end="+str(end))
-            temp += i[2]
             print("temp="+ str(temp))
             if i[1] == end:
-                result = min(result, temp)
+                temp[start][end] = 
                 temp = 0
             else:
                 dfs(arr,i[1],end)
