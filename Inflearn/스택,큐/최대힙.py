@@ -13,3 +13,4 @@ while True:
             print(hq.heappop(a) * (-1))
     else:
         hq.heappush(a,-n)
+        
